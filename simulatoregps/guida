@@ -1,0 +1,5 @@
+java -jar android-gps-emulator-0.1.0.war
+
+aprire nel browser: 
+http://localhost:8080/gpsemulator/
+
