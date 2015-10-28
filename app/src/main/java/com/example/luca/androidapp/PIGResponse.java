@@ -1,18 +1,15 @@
 package com.example.luca.androidapp;
 
 import android.os.AsyncTask;
-import android.text.format.Formatter;
 import android.widget.Toast;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.DatagramPacket;
 import java.net.DatagramSocket;
 import java.net.InetAddress;
-import java.net.NetworkInterface;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.net.SocketException;
-import java.util.Enumeration;
+
 
 
 public class PIGResponse extends AsyncTask<Void, Void, Void>
@@ -71,7 +68,7 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
             ss.close();
         }
         catch(Exception e) {
-            System.err.println(e);
+            System.out.println(e);
             response=("Errore parte ricezione socket: "+e);
         }
 
