@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dfxml xmloutputversion='1.0'>
+  <metadata 
+  xmlns='http://afflib.org/tcpflow/' 
+  xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' 
+  xmlns:dc='http://purl.org/dc/elements/1.1/'>
+    <dc:type>Feature Extraction</dc:type>
+  </metadata>
+  <creator version='1.0'>
+    <program>TCPFLOW</program>
+    <version>1.4.4</version>
+    <build_environment>
+      <compiler>4.8.3 (4.8.3)</compiler>
+      <CPPFLAGS>-pthread -I/usr/local/include -D_FORTIFY_SOURCE=2 -DUTC_OFFSET=+0000 </CPPFLAGS>
+      <CFLAGS>-g   -pthread -g -O3 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -MD -D_FORTIFY_SOURCE=2 -Wpointer-arith -Wmissing-declarations -Wmissing-prototypes -Wshadow -Wwrite-strings -Wcast-align -Waggregate-return -Wbad-function-cast -Wcast-qual -Wundef -Wredundant-decls -Wdisabled-optimization -Wfloat-equal -Wmultichar -Wc++-compat -Wmissing-noreturn -Wall -Wstrict-prototypes</CFLAGS>
+      <CXXFLAGS>-g -pthread -g -O3 -fstack-protector --param=ssp-buffer-size=4 -Wformat -Werror=format-security -std=c++11 -Wall -MD -D_FORTIFY_SOURCE=2 -Wpointer-arith -Wshadow -Wwrite-strings -Wcast-align -Wredundant-decls -Wdisabled-optimization -Wfloat-equal -Wmultichar -Wmissing-noreturn -Woverloaded-virtual -Wsign-promo -funit-at-a-time -Wstrict-null-sentinel -Weffc++ </CXXFLAGS>
+      <LDFLAGS>-L/usr/local/lib -Wl,-Bsymbolic-functions -Wl,-z,relro</LDFLAGS>
+      <LIBS>-lpcap -lcairo -lfontconfig -lfreetype -lpixman-1 -lexpat  -lssl -lcrypto -lz -lssl -lcrypto </LIBS>
+      <compilation_date>2014-07-07T23:23:27</compilation_date>
+      <library name="boost" version="105500"/>
+    </build_environment>
+    <execution_environment>
+      <os_sysname>Linux</os_sysname>
+      <os_release>3.19.0-15-generic</os_release>
+      <os_version>#15-Ubuntu SMP Thu Apr 16 23:32:37 UTC 2015</os_version>
+      <host>luca-HP-Pavilion-dv7-Notebook-PC</host>
+      <arch>x86_64</arch>
+      <command_line>tcpflow</command_line>
+      <uid>0</uid>
+      <start_time>2015-10-27T10:23:24Z</start_time>
+    </execution_environment>
+  </creator>
+  <configuration>
+  </configuration>
+  <tdelta>0</tdelta>
+  <configuration>
+    <fileobject>
+      <filename>010.016.003.070.41674-093.184.220.241.00443</filename>
+      <filesize>31</filesize>
+      <tcpflow startime='2015-10-27T11:23:33.417410Z' endtime='2015-10-27T11:23:33.417428Z' src_ipn='10.16.3.70' dst_ipn='93.184.220.241' mac_daddr='00:19:99:57:68:b1' mac_saddr='00:1e:ec:85:6d:5c' packets='2' srcport='41674' dstport='443' family='2' />
+    </fileobject>
+    <fileobject>
+      <filename>093.184.220.241.00443-010.016.003.070.41674</filename>
+      <filesize>31</filesize>
+      <tcpflow startime='2015-10-27T11:23:33.452608Z' endtime='2015-10-27T11:23:33.452654Z' src_ipn='93.184.220.241' dst_ipn='10.16.3.70' mac_daddr='00:1e:ec:85:6d:5c' mac_saddr='00:19:99:57:68:b1' packets='2' srcport='443' dstport='41674' family='2' />
+    </fileobject>
+    <fileobject>
+      <filename>2001:760:2e01:10:2d0a:a37c:896b:17be.40922-2a02:26f0:4:190::25eb.00443</filename>
+      <filesize>31</filesize>
+      <tcpflow startime='2015-10-27T11:23:35.417399Z' endtime='2015-10-27T11:23:35.417419Z' src_ipn='32.1.7.96' dst_ipn='42.2.38.240' mac_daddr='00:19:99:57:68:b1' mac_saddr='00:1e:ec:85:6d:5c' packets='2' srcport='40922' dstport='443' family='10' />
+    </fileobject>
+    <fileobject>
+      <filename>2a02:26f0:4:190::25eb.00443-2001:760:2e01:10:2d0a:a37c:896b:17be.40922</filename>
+      <filesize>31</filesize>
+      <tcpflow startime='2015-10-27T11:23:35.426249Z' endtime='2015-10-27T11:23:35.426292Z' src_ipn='42.2.38.240' dst_ipn='32.1.7.96' mac_daddr='00:1e:ec:85:6d:5c' mac_saddr='00:19:99:57:68:b1' packets='2' srcport='443' dstport='40922' family='10' />
+    </fileobject>
+    <fileobject>
+      <filename>2607:f8b0:4008:804::2003.00443-2001:760:2e01:10:2d0a:a37c:896b:17be.42954</filename>
+      <filesize>60</filesize>
+      <tcpflow startime='2015-10-27T11:23:55.378093Z' endtime='2015-10-27T11:23:55.378103Z' src_ipn='38.7.248.176' dst_ipn='32.1.7.96' mac_daddr='00:1e:ec:85:6d:5c' mac_saddr='00:19:99:57:68:b1' packets='2' srcport='443' dstport='42954' family='10' />
+    </fileobject>
+    <fileobject>
+      <filename>2001:760:2e01:10:2d0a:a37c:896b:17be.42954-2607:f8b0:4008:804::2003.00443</filename>
+      <filesize>123</filesize>
+      <tcpflow startime='2015-10-27T11:23:55.251783Z' endtime='2015-10-27T11:23:55.378476Z' src_ipn='32.1.7.96' dst_ipn='38.7.248.176' mac_daddr='00:19:99:57:68:b1' mac_saddr='00:1e:ec:85:6d:5c' packets='4' srcport='42954' dstport='443' family='10' />
+    </fileobject>
