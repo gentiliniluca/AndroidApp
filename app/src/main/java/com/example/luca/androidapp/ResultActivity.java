@@ -24,7 +24,7 @@ public class ResultActivity extends AppCompatActivity
 
         result= (TextView) findViewById(R.id.result_label);
         TextView content_label= (TextView) findViewById(R.id.content_label);
-        content_label.setText("Content: (my_ip: "+Global.getIP()+", port: "+global.get_port_result()+" )");
+        content_label.setText("Content: ");
 
         //gestisco il pulsante indietro nella action bar
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

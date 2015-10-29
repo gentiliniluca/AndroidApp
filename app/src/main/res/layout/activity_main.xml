@@ -12,10 +12,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="IP SPF Controller:"
         android:id="@+id/ip_spf_controller_label"
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="23dp"
         android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/gps_coordinates_label"
-        android:layout_alignEnd="@+id/gps_coordinates_label" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -23,10 +23,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="Port SPF Controller:"
         android:id="@+id/port_spf_controller_label"
-        android:layout_below="@+id/ip_spf_controller_label"
+        android:layout_below="@+id/ip_spf_controller"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp" />
+        android:layout_marginTop="7dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,10 +34,10 @@
         android:textAppearance="?android:attr/textAppearanceMedium"
         android:text="GPS Coordinates:"
         android:id="@+id/gps_coordinates_label"
-        android:layout_below="@+id/port_spf_controller_label"
+        android:layout_marginTop="87dp"
+        android:layout_below="@+id/port_spf_controller"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="43dp" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -53,7 +53,9 @@
         android:layout_height="wrap_content"
         android:text="Long: "
         android:id="@+id/longitude_label"
-        android:layout_below="@+id/latitude_label" />
+        android:layout_below="@+id/latitude_label"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -91,10 +93,10 @@
         android:layout_height="wrap_content"
         android:id="@+id/ip_spf_controller"
         android:text="0.0.0.0"
-        android:layout_alignBaseline="@+id/ip_spf_controller_label"
-        android:layout_alignBottom="@+id/ip_spf_controller_label"
+        android:layout_alignParentTop="true"
         android:layout_alignLeft="@+id/port_spf_controller"
-        android:layout_alignStart="@+id/port_spf_controller" />
+        android:layout_alignStart="@+id/port_spf_controller"
+        android:layout_marginTop="12dp" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -107,5 +109,26 @@
         android:layout_alignBottom="@+id/port_spf_controller_label"
         android:layout_toRightOf="@+id/port_spf_controller_label"
         android:layout_toEndOf="@+id/port_spf_controller_label" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="My IP Address:"
+        android:id="@+id/my_ip_label"
+        android:layout_marginTop="18dp"
+        android:layout_below="@+id/port_spf_controller"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/my_ip_address"
+        android:text="0.0.0.0"
+        android:layout_below="@+id/port_spf_controller_label"
+        android:layout_alignLeft="@+id/port_spf_controller"
+        android:layout_alignStart="@+id/port_spf_controller"
+        android:layout_marginTop="5dp" />
 
 </RelativeLayout>

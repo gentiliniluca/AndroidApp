@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
     TextView lat, longit;
     Spinner spinner;
     Button button;
-    EditText ip, port;
+    EditText ip, port, my_ip;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +45,8 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         //set port and ip from global
         ip=(EditText)findViewById(R.id.ip_spf_controller);
         port=(EditText) findViewById(R.id.port_spf_controller);
+        my_ip=(EditText) findViewById(R.id.my_ip_address);
+        my_ip.setText(Global.getIP());
         ip.setText(global.get_ip_spf_controller());
         port.setText(""+global.get_port_spf_controller());
 
