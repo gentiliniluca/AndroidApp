@@ -2,7 +2,6 @@ package com.example.luca.androidapp;
 
 import android.os.AsyncTask;
 import android.widget.Toast;
-
 import java.io.*;
 import java.net.*;
 
