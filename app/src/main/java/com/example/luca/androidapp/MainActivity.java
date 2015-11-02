@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         //get Your Current Location
         lat=(TextView) findViewById(R.id.latitude_label);
         longit=(TextView) findViewById(R.id.longitude_label);
+        
         locationManager=    (LocationManager)getSystemService(Context.LOCATION_SERVICE);
         MyCurrentLoctionListener locationListener = new MyCurrentLoctionListener(lat, longit);
         locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, (LocationListener) locationListener);
@@ -69,7 +70,6 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         button.setOnClickListener(this);
 
     }
-
 
 
     @Override
@@ -89,6 +89,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
             String line=my_request+" "+my_lat+" "+my_longit;
             SendToSPF send= new SendToSPF(my_ip, Integer.parseInt(my_port), line, this);
             send.execute();
+            System.out.println("Arrivato fine premuto send to controller");
 
         }
 

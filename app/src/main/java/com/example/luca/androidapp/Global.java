@@ -9,7 +9,7 @@ import java.util.Enumeration;
 
 public class Global extends Application
 {
-    private String ip_spf_controller="10.0.2.2"; //"127.0.0.1";
+    private String ip_spf_controller="192.168.43.175";//"10.16.3.70";//"10.0.2.2"; //"127.0.0.1";
     private int port_spf_controller=50000;
     private int port_result=56487;
 

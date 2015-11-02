@@ -18,7 +18,7 @@ class MyCurrentLoctionListener implements LocationListener
     public void onLocationChanged(Location location) {
         if(location==null)
         {
-            System.out.println("*****Impossibile rilevare la posizione");
+            System.out.println("********************Impossibile rilevare la posizione");
             lat.setText("Lat: not available");
             longit.setText("Long: not available");
         }

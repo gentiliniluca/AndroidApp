@@ -30,7 +30,9 @@ public class SendToSPF extends AsyncTask<Void, Void, Void>
     protected Void doInBackground(Void... voids)
     {
         try {
+            System.out.println("***********************provo a creare socket");
             sock = new Socket(ip, port);
+            System.out.println("**************************socket creata");
             OutputStreamWriter osw = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
             BufferedWriter networkOut = new BufferedWriter(osw);
 
