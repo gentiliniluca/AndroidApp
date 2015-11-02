@@ -29,9 +29,11 @@ public class SendToSPF extends AsyncTask<Void, Void, Void>
     @Override
     protected Void doInBackground(Void... voids)
     {
+        esito=false;
         try {
             System.out.println("***********************provo a creare socket");
-            sock = new Socket(ip, port);
+            sock = new Socket();
+            sock.connect(new InetSocketAddress(ip, port),6000); //imposto anche i ms di attesa per creare la socket
             System.out.println("**************************socket creata");
             OutputStreamWriter osw = new OutputStreamWriter(sock.getOutputStream(), "UTF-8");
             BufferedWriter networkOut = new BufferedWriter(osw);
@@ -58,6 +60,7 @@ public class SendToSPF extends AsyncTask<Void, Void, Void>
     protected void onPostExecute(Void result) {
         super.onPostExecute(result);
         if(esito) {
+            Toast.makeText(m, "Request sent to SPF Controller, opening result page", Toast.LENGTH_SHORT).show();
             m.openResultPage();
             esito = false;
         }else {
