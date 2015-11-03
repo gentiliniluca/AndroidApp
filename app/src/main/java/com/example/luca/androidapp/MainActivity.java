@@ -42,6 +42,10 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         setContentView(R.layout.activity_main);
         global=((Global)getApplicationContext());
 
+        //receive username
+        Intent myIntent = getIntent(); // gets the previously created intent
+        String nome_param = myIntent.getStringExtra("username_param");
+
         //set port and ip from global
         ip=(EditText)findViewById(R.id.ip_spf_controller);
         port=(EditText) findViewById(R.id.port_spf_controller);
@@ -60,7 +64,13 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
 
         //populate spinner (select menu )
         spinner = (Spinner)findViewById(R.id.request_spinner);
-        String[] operations = new String[]{"Find Water", "Listen Song"};
+        String[] operations=null;
+        if(nome_param.equals("par"))
+            operations= new String[]{"Find Water", "Listen Song"};
+        else if(nome_param.equals("pol"))
+            operations= new String[]{"Count"};
+        else if(nome_param.equals("ems"))
+            operations= new String[]{"Emergency"};
         ArrayAdapter<String>adapter = new ArrayAdapter<String>(MainActivity.this, android.R.layout.simple_spinner_item,operations);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setAdapter(adapter);

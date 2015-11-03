@@ -26,7 +26,6 @@ class MyCurrentLoctionListener implements LocationListener
             lat.setText("Lat: "+(float)location.getLatitude());
             longit.setText("Long: "+(float)location.getLongitude());
         }
-
     }
 
 

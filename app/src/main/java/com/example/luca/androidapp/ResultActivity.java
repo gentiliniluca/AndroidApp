@@ -2,6 +2,9 @@ package com.example.luca.androidapp;
 
 import android.app.ActionBar;
 import android.content.Intent;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.v4.app.NavUtils;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -27,16 +30,16 @@ public class ResultActivity extends AppCompatActivity
         content_label.setText("Content: ");
 
         //gestisco il pulsante indietro nella action bar
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowHomeEnabled(true);
+       /* getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowHomeEnabled(true);*/
 
-        PIGResponse response_from_pig = new PIGResponse(this, global.get_port_result());
+        final PIGResponse response_from_pig = new PIGResponse(this, global.get_port_result(), global.get_waiting_time_for_response());
         response_from_pig.execute();
 
 
     }
 
-    public boolean onOptionsItemSelected(MenuItem item)
+    /*public boolean onOptionsItemSelected(MenuItem item)
     {
         switch (item.getItemId()) {
             case android.R.id.home: //mi gestisce la freccia indietro nella action bar
@@ -44,7 +47,7 @@ public class ResultActivity extends AppCompatActivity
                 return true;
         }
         return false;
-    }
+    }*/
 
     public void updateResult(String msg)
     {

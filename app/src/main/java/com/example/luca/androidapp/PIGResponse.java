@@ -1,7 +1,12 @@
 package com.example.luca.androidapp;
 
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.AsyncTask;
+import android.os.CountDownTimer;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.DatagramPacket;
@@ -11,19 +16,35 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 
-
 public class PIGResponse extends AsyncTask<Void, Void, Void>
 {
-    boolean esito=false;
+    boolean esito=false, server_continium;
     ResultActivity rs;
     int port;
     String response;
 
-    PIGResponse(ResultActivity rs, int port)
+    PIGResponse(ResultActivity rs, int port, int waiting_time)
     {
         this.rs =rs;
         this.port=port;
         System.out.println("--------------------IP: " + Global.getIP() + " porta: " + port);
+        new Handler(Looper.getMainLooper()).post(new Runnable() {
+            @Override
+            public void run() {
+                CountDownTimer cdt = new CountDownTimer(7000, 1000) {
+                    @Override
+                    public void onTick(long millisUntilFinished) {
+                    }
+
+                    @Override
+                    public void onFinish() {
+                        server_continium=false;
+                        System.out.println("BASTA RICEVEREEEEEEEEEEEEEEEEEEEEEEEEEEEEEE");
+                    }
+                }.start();
+            }
+        });
+
     }
 
     @Override
@@ -32,6 +53,7 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
         esito=false;
         rs.updateResult("wait...");
         response="";
+        server_continium=true;
 
         receive_via_TCP_from_DS();
         //invia_e_ricezione_Prova();
@@ -46,31 +68,40 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
         esito=false;
         try {
             ServerSocket ss = new ServerSocket(port);
+            System.out.println("----------------pronto ricevere accept su porta " + port + "->");
 
-            System.out.println("----------------pronto ricevere accept su porta "+port+ "->");
-            Socket ns = ss.accept();
-            System.out.println("----------------ricevuta! accept");
-            BufferedReader networkIn = new BufferedReader(new InputStreamReader(ns.getInputStream(), "UTF-8"));
+            while (server_continium) {
+                try {
+                    Socket ns = ss.accept();
+                    System.out.println("----------------ricevuta! accept da " + ns.getInetAddress());
+                    BufferedReader networkIn = new BufferedReader(new InputStreamReader(ns.getInputStream(), "UTF-8"));
 
-            //OutputStreamWriter osw = new OutputStreamWriter(ns.getOutputStream(), "UTF-8");;
-            //BufferedWriter networkOut= new BufferedWriter(osw);
+                    //OutputStreamWriter osw = new OutputStreamWriter(ns.getOutputStream(), "UTF-8");;
+                    //BufferedWriter networkOut= new BufferedWriter(osw);
 
-            String line;
-            //while (true)
-            //{
-                line = networkIn.readLine();
-                response=response+line;
-                System.out.println("**************************Ricevuto: " + response);
+                    String line;
+                    int i=1;
+                    while ((line = networkIn.readLine()) != null) {
+                        response = response +i+") "+ line+"\n";
+                        i++;
+                        System.out.println("**************************Ricevuto: " + response);
+                    }
+                    esito = true;
+                    //server_continium=false;
+                    ns.close();
+                } catch (Exception r) {
+                    System.out.println("Errore singola ricezione nel ciclo while "+r);
+                }
 
-            //}
-            esito=true;
-            ns.close();
+            }
             ss.close();
         }
         catch(Exception e) {
             System.out.println(e);
             response=("Errore parte ricezione socket: "+e);
         }
+
+        System.out.println("Arrivato alla fine di do in background");
 
     }
 
@@ -162,7 +193,5 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
             rs.updateResult("Unable to receive!");
         }
     }
-
-
 
 }
