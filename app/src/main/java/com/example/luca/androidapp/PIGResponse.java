@@ -23,7 +23,7 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
     int port;
     String response;
 
-    PIGResponse(ResultActivity rs, int port, int waiting_time)
+    PIGResponse(ResultActivity rs, int port)
     {
         this.rs =rs;
         this.port=port;
@@ -33,8 +33,7 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
             public void run() {
                 CountDownTimer cdt = new CountDownTimer(7000, 1000) {
                     @Override
-                    public void onTick(long millisUntilFinished) {
-                    }
+                    public void onTick(long millisUntilFinished) {}
 
                     @Override
                     public void onFinish() {
@@ -44,7 +43,6 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
                 }.start();
             }
         });
-
     }
 
     @Override

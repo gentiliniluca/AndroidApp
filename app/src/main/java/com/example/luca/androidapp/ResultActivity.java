@@ -33,7 +33,7 @@ public class ResultActivity extends AppCompatActivity
        /* getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);*/
 
-        final PIGResponse response_from_pig = new PIGResponse(this, global.get_port_result(), global.get_waiting_time_for_response());
+        final PIGResponse response_from_pig = new PIGResponse(this, global.get_port_result());
         response_from_pig.execute();
 
 

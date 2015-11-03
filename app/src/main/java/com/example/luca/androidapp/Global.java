@@ -12,7 +12,6 @@ public class Global extends Application
     private String ip_spf_controller="192.168.43.175";//"10.16.3.70";//"10.0.2.2"; //"127.0.0.1";
     private int port_spf_controller=50000;
     private int port_result=56487;
-    private int waiting_time_for_response=7;
 
     public int get_port_spf_controller()  {return port_spf_controller;}
     public void set_port_spf_controller(int p) {  this.port_spf_controller = p;}
@@ -23,8 +22,6 @@ public class Global extends Application
     public int get_port_result() {return port_result;}
     public void set_port_result(int p) {  this.port_result = p;}
 
-    public int get_waiting_time_for_response() {return waiting_time_for_response;}
-    public void set_waiting_time_for_response(int p) {  this.waiting_time_for_response = p;}
 
     public static String getIP()
     {
