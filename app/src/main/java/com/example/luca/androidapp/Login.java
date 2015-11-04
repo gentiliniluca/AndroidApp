@@ -1,5 +1,6 @@
 package com.example.luca.androidapp;
 
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.*;
@@ -24,7 +25,6 @@ public class Login extends AppCompatActivity implements AsyncResponse {
 
         User = (EditText) findViewById(R.id.username_editText);
         Pass = (EditText) findViewById(R.id.password_editText);
-
 
         buttonReset.setOnClickListener(new View.OnClickListener() {
             @Override

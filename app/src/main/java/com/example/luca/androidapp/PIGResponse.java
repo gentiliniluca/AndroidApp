@@ -60,7 +60,6 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
     }
 
 
-
     public void receive_via_TCP_from_DS()
     {
         esito=false;
@@ -78,10 +77,8 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
                     //BufferedWriter networkOut= new BufferedWriter(osw);
 
                     String line;
-                    int i=1;
                     while ((line = networkIn.readLine()) != null) {
-                        response = response +i+") "+ line+"\n";
-                        i++;
+                        response = response +line+"\n";
                         System.out.println("**************************Ricevuto: " + response);
                     }
                     esito = true;

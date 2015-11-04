@@ -131,4 +131,13 @@
         android:layout_alignStart="@+id/port_spf_controller"
         android:layout_marginTop="5dp" />
 
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView2"
+        android:src="@drawable/world"
+        android:layout_above="@+id/request_label"
+        android:layout_alignRight="@+id/send_request_button"
+        android:layout_alignEnd="@+id/send_request_button" />
+
 </RelativeLayout>
