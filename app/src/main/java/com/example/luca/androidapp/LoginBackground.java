@@ -28,8 +28,8 @@ public class LoginBackground extends AsyncTask<Void, Void, Void> {
     {
         System.out.println("User: *"+user+"* Pass: *"+password+"*");
 
-        if( (user.equals("par") && password.equals("par")) ||
-                (user.equals("pol") && password.equals("pol")) ||
+        if( (user.equals("participant") && password.equals("participant")) ||
+                (user.equals("police") && password.equals("police")) ||
                 (user.equals("ems") && password.equals("ems"))) {
             System.out.println("Entrato, OKKK");
             esito=true;

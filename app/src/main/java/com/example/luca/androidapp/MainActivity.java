@@ -65,9 +65,9 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         //populate spinner (select menu )
         spinner = (Spinner)findViewById(R.id.request_spinner);
         String[] operations=null;
-        if(nome_param.equals("par"))
+        if(nome_param.equals("participant"))
             operations= new String[]{"Find Water", "Listen Song"};
-        else if(nome_param.equals("pol"))
+        else if(nome_param.equals("police"))
             operations= new String[]{"Count"};
         else if(nome_param.equals("ems"))
             operations= new String[]{"Emergency"};
