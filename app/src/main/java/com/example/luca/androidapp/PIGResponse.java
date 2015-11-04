@@ -1,12 +1,10 @@
 package com.example.luca.androidapp;
 
-import android.net.wifi.p2p.WifiP2pManager;
 import android.os.AsyncTask;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.os.Looper;
 import android.widget.Toast;
-
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.DatagramPacket;

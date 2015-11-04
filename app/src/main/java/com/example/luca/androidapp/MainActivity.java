@@ -1,13 +1,9 @@
 package com.example.luca.androidapp;
 
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.location.Criteria;
-import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -16,11 +12,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
-import android.view.View;
 import android.view.View.OnClickListener;
 
 public class MainActivity extends AppCompatActivity implements OnClickListener

@@ -1,12 +1,6 @@
 package com.example.luca.androidapp;
 
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.*;
-import java.net.Socket;
-import java.net.UnknownHostException;
 import android.os.AsyncTask;
-import android.widget.Toast;
 
 public class LoginBackground extends AsyncTask<Void, Void, Void> {
 
