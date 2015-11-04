@@ -87,7 +87,6 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
                 } catch (Exception r) {
                     System.out.println("Errore singola ricezione nel ciclo while "+r);
                 }
-
             }
             ss.close();
         }
