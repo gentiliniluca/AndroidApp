@@ -181,7 +181,7 @@ public class PIGResponse extends AsyncTask<Void, Void, Void>
             rs.updateResult(response);
             esito = false;
         }else {
-            Toast.makeText(rs, "Unable to receive UDP packet", Toast.LENGTH_SHORT).show();
+            Toast.makeText(rs, "Unable to receive packet", Toast.LENGTH_SHORT).show();
             rs.updateResult("Unable to receive!");
         }
     }
