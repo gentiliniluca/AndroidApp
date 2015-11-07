@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener
         ip=(EditText)findViewById(R.id.ip_spf_controller);
         port=(EditText) findViewById(R.id.port_spf_controller);
         my_ip=(EditText) findViewById(R.id.my_ip_address);
-        my_ip.setText(Global.getIP());
+        my_ip.setText(global.getIP());
         ip.setText(global.get_ip_spf_controller());
         port.setText(""+global.get_port_spf_controller());
 

@@ -1,7 +1,12 @@
 package com.example.luca.androidapp;
 
 import android.app.Application;
+import android.net.wifi.WifiInfo;
+import android.net.wifi.WifiManager;
 import android.text.format.Formatter;
+
+import org.apache.http.conn.util.InetAddressUtils;
+
 import java.net.InetAddress;
 import java.net.NetworkInterface;
 import java.net.SocketException;
@@ -23,24 +28,42 @@ public class Global extends Application
     public void set_port_result(int p) {  this.port_result = p;}
 
 
+    public String getIPold()
+    {
+        WifiManager wifiMgr = (WifiManager) getSystemService(WIFI_SERVICE);
+        WifiInfo wifiInfo = wifiMgr.getConnectionInfo();
+        int ip = wifiInfo.getIpAddress();
+        String ipAddress = Formatter.formatIpAddress(ip);
+        return ipAddress;
+    }
+
     public static String getIP()
     {
+       String ipv4;
         try {
-            for (Enumeration<NetworkInterface> en = NetworkInterface.getNetworkInterfaces(); en.hasMoreElements();) {
+            for (Enumeration<NetworkInterface> en = NetworkInterface
+                    .getNetworkInterfaces(); en.hasMoreElements();) {
                 NetworkInterface intf = en.nextElement();
-                for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
+                for (Enumeration<InetAddress> enumIpAddr = intf
+                        .getInetAddresses(); enumIpAddr.hasMoreElements();) {
                     InetAddress inetAddress = enumIpAddr.nextElement();
-                    //System.out.println("$$$$$ "+Formatter.formatIpAddress(inetAddress.hashCode()));
-                    if (!inetAddress.isLoopbackAddress()) {
-                        String ip = Formatter.formatIpAddress(inetAddress.hashCode());
-                        return ip;
+                    System.out.println("ip1--:" + inetAddress);
+                    System.out.println("ip2--:" + inetAddress.getHostAddress());
+
+                    // for getting IPV4 format
+                    if (!inetAddress.isLoopbackAddress() && InetAddressUtils.isIPv4Address(ipv4 = inetAddress.getHostAddress())) {
+                        String ip = inetAddress.getHostAddress().toString();
+                        System.out.println("ip---::" + ip);
+
+                        // return inetAddress.getHostAddress().toString();
+                        return ipv4;
                     }
                 }
             }
-        } catch (SocketException ex) {
-            System.out.println(ex.toString());
+        } catch (Exception ex) {
+            System.out.println("IP Address"+ ex.toString());
         }
-        return "ip sconosciuto";
+        return "IP unknown";
     }
 
 }

@@ -31,7 +31,6 @@ public class LoginBackground extends AsyncTask<Void, Void, Void> {
         else {
             System.out.println("NON entrato|");
         }
-
         return null;
     }
 
